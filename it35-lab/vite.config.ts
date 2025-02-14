@@ -11,6 +11,7 @@ export default defineConfig({
     legacy()
   ],
   test: {
+    base : "it35-lab",
     globals: true,
     environment: 'jsdom',
     setupFiles: './src/setupTests.ts',
