@@ -1,14 +1,14 @@
 import { 
   IonButtons,
-    IonContent, 
-    IonHeader, 
-    IonMenuButton, 
-    IonPage, 
-    IonTitle, 
-    IonToolbar 
+  IonContent, 
+  IonHeader, 
+  IonMenuButton, 
+  IonPage, 
+  IonTitle, 
+  IonToolbar 
 } from '@ionic/react';
 
-const Template: React.FC = () => {
+const Login: React.FC = () => { // <-- Change Template to Login
   return (
     <IonPage>
       <IonHeader>
@@ -25,4 +25,4 @@ const Template: React.FC = () => {
   );
 };
 
-export default Login;
+export default Login; // <-- Now the export matches the component name
