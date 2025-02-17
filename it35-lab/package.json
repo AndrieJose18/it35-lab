@@ -3,17 +3,16 @@
   "private": true,
   "version": "0.0.1",
   "type": "module",
-  "homepage": "https://AndrieJose18.github.io/it35-lab/",
-  "description": "An Ionic project",
-  "scripts": {
+  "homepage": "https://github.com/AndrieJose18/it35-lab.git",
+   "scripts": {
+   "predeploy" : "npm run build",
+   "deploy" : "gh-pages -d dist",
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "test.e2e": "cypress run",
     "test.unit": "vitest",
-    "lint": "eslint",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "lint": "eslint"
   },
   "dependencies": {
     "@capacitor/app": "7.0.0",
@@ -50,5 +49,8 @@
     "typescript": "^5.1.6",
     "vite": "~5.2.0",
     "vitest": "^0.34.6"
-  }
+  },
+  "description": "An Ionic project"
+
+  
 }
