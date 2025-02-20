@@ -16,7 +16,7 @@ const Template: React.FC = () => {
           <IonButtons slot='start'>
             <IonMenuButton></IonMenuButton>
           </IonButtons>
-          <IonTitle>Favourites</IonTitle>
+          <IonTitle>Favorites</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
