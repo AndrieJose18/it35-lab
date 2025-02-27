@@ -24,7 +24,7 @@ const Login: React.FC = () => {
           <IonButtons slot='start'>
             <IonMenuButton></IonMenuButton>
           </IonButtons>
-          <IonTitle>Login</IonTitle>
+          <IonTitle> User Login</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
