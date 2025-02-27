@@ -24,7 +24,6 @@ const Menu: React.FC = () => {
   const path = [
       {name:'Home', url: '/it35-lab/app/home', icon: homeOutline},
       {name:'About', url: '/it35-lab/app/about', icon: rocketOutline},
-      {name:'Details', url: '/it35-lab/app/home/details', icon: rocketOutline}
   ]
 
   return (
