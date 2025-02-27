@@ -24,6 +24,7 @@ const Menu: React.FC = () => {
   const path = [
       {name:'Home', url: '/it35-lab/app/home', icon: homeOutline},
       {name:'About', url: '/it35-lab/app/about', icon: rocketOutline},
+      {name:'Details', url: '/it35-lab/app/home/details', icon: rocketOutline}
   ]
 
   return (
@@ -58,8 +59,8 @@ const Menu: React.FC = () => {
               
               <IonRouterOutlet id="main">
                   <Route exact path="/it35-lab/app/home" component={Home} />
-                  <Route exact path="/it35-lab/app/home/details" component={Details} />
                   <Route exact path="/it35-lab/app/about" component={About} />
+                  <Route exact path="/it35-lab/app/details" component={Details} />
 
                   <Route exact path="/it35-lab/app">
                       <Redirect to="/it35-lab/app/home"/>
