@@ -5,7 +5,10 @@ import {
     IonMenuButton, 
     IonPage, 
     IonTitle, 
-    IonToolbar 
+    IonToolbar,
+    IonItem,
+    IonLabel,
+    IonList 
 } from '@ionic/react';
 
 const Favorites: React.FC = () => {
@@ -20,8 +23,26 @@ const Favorites: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
+      <IonList>
+    <IonItem>
+      <IonLabel>One Piece</IonLabel>
+    </IonItem>
+    <IonItem>
+      <IonLabel>Vinland Saga</IonLabel>
+    </IonItem>
+    <IonItem>
+      <IonLabel>Bleach</IonLabel>
+    </IonItem>
+    <IonItem>
+      <IonLabel> Solo Leveling </IonLabel>
+    </IonItem>
+    <IonItem>
+      <IonLabel> Demon Slayer</IonLabel>
+    </IonItem>
+  </IonList>
       </IonContent>
     </IonPage>
+    
   );
 };
 
