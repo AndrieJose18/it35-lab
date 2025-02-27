@@ -1,5 +1,10 @@
 import { 
   IonButtons,
+    IonCard,
+    IonCardContent,
+    IonCardHeader,
+    IonCardSubtitle,
+    IonCardTitle,
     IonContent, 
     IonHeader, 
     IonMenuButton, 
@@ -20,6 +25,34 @@ const Feed: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
+      <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'flex-start',
+            minHeight:'100vh',
+            paddingBottom:'20px',
+          }}
+        >
+          <IonCard>
+      <IonCardHeader>
+        <IonCardTitle>Weather Updates</IonCardTitle>
+        <IonCardSubtitle>Manolo Fortich</IonCardSubtitle>
+      </IonCardHeader>
+
+    <IonCardContent>Good day ! As of Today February 25, 2025 , Weather is on cloudy sky and expected rain on the evening</IonCardContent>
+    </IonCard>
+    <IonCard>
+      <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+      <IonCardHeader>
+        <IonCardTitle>Card Title</IonCardTitle>
+        <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
+      </IonCardHeader>
+
+      <IonCardContent>A small description from a Silhouette</IonCardContent>
+    </IonCard>
+        </div>
       </IonContent>
     </IonPage>
   );
