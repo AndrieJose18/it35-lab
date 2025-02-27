@@ -25,19 +25,19 @@ const Favorites: React.FC = () => {
       <IonContent fullscreen>
       <IonList>
     <IonItem>
-      <IonLabel>Climate Change</IonLabel>
+      <IonLabel>One Piece</IonLabel>
     </IonItem>
     <IonItem>
-      <IonLabel>Cybercrimes</IonLabel>
+      <IonLabel>Vinland Saga</IonLabel>
     </IonItem>
     <IonItem>
-      <IonLabel>Philippine politics</IonLabel>
+      <IonLabel>Bleach</IonLabel>
     </IonItem>
     <IonItem>
-      <IonLabel>New Social Media Trends</IonLabel>
+      <IonLabel> Solo Leveling </IonLabel>
     </IonItem>
     <IonItem>
-      <IonLabel>Effects of Overpopulation</IonLabel>
+      <IonLabel> Demon Slayer</IonLabel>
     </IonItem>
   </IonList>
       </IonContent>
