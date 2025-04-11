@@ -51,7 +51,7 @@ const Login: React.FC = () => {
         </div>
 
         {/* Centered Login Card */}
-        <IonCard style={{ maxWidth: '400px', margin: 'auto', marginTop: '20px', padding: '20px' }}>
+        <IonCard style={{ maxWidth: '5000px', margin: 'auto', marginTop: '50px', padding: '50px' }}>
           <IonCardContent>
             <IonList>
               {/* Email Input */}
