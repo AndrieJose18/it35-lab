@@ -122,17 +122,17 @@ const FeedContainer = () => {
               {/* Create Post Card */}
               <IonCard style={{ backgroundColor: '#e0f7fa' }}>
                 <IonCardHeader>
-                  <IonCardTitle style={{ fontSize: '14px' }}>Create Post</IonCardTitle>
+                  <IonCardTitle style={{ fontSize: '20px' }}>Create Post</IonCardTitle>
                 </IonCardHeader>
                 <IonCardContent>
                   <IonInput
-                    style={{ fontSize: '14px' }}
+                    style={{ fontSize: '20px' }}
                     value={postContent}
                     onIonChange={e => setPostContent(e.detail.value!)}
-                    placeholder="Write a post..."
+                    placeholder="What's happening?..."
                   />
                 </IonCardContent>
-                <div style={{ display: 'flex', justifyContent: 'flex-end', padding: '0.5rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'flex-end', padding: '0.50rem' }}>
                   <IonButton onClick={createPost}>Post</IonButton>
                 </div>
               </IonCard>
@@ -148,7 +148,7 @@ const FeedContainer = () => {
                         </IonAvatar>
                       </IonCol>
                       <IonCol>
-                        <IonCardTitle style={{ marginTop: '10px', fontSize: '14px' }}>{post.username}</IonCardTitle>
+                        <IonCardTitle style={{ marginTop: '20px', fontSize: '20px' }}>{post.username}</IonCardTitle>
                         <IonCardSubtitle style={{ fontSize: '12px' }}>
                           {new Date(post.post_created_at).toLocaleString()}
                         </IonCardSubtitle>
@@ -170,7 +170,7 @@ const FeedContainer = () => {
 
                   <IonCardContent>
                     <IonText style={{ color: 'black', fontSize: '14px' }}>
-                      <h1 style={{ fontSize: '14px' }}>{post.post_content}</h1>
+                      <h1 style={{ fontSize: '20px' }}>{post.post_content}</h1>
                     </IonText>
                   </IonCardContent>
 
