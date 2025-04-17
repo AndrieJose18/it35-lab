@@ -200,24 +200,24 @@ const FeedContainer = () => {
           --ion-text-color: white;
         }
         .content-area {
-          background-color:rgb(180, 17, 17);
+          background-color:rgb(214, 125, 125);
           padding: 16px;
         }
         .create-post-card {
-          background-color: #333;
+          background-color: #FFFFFF;
           border-radius: 10px;
-          color: #fff;
+          color:rgb(2, 2, 2);
         }
         .post-card {
-          background-color:rgb(192, 114, 114);
+          background-color:rgb(209, 79, 79);
           margin-bottom: 15px;
           border-radius: 12px;
         }
         .post-card-header {
-          background-color:rgb(252, 238, 238);
+          background-color:rgb(233, 229, 229);
         }
         .post-button {
-          background-color: #ff6600;
+          background-color:rgb(151, 83, 37);
           color: white;
         }
       `}</style>
