@@ -105,7 +105,7 @@ const FeedContainer = () => {
   };
 
   return (
-    <IonApp>
+    <>
       <IonPage className="one-piece-theme">
         <IonHeader>
           <IonToolbar className="header-toolbar">
@@ -221,7 +221,7 @@ const FeedContainer = () => {
           color: white;
         }
       `}</style>
-    </IonApp>
+    </>
   );
 };
 
