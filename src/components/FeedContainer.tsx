@@ -196,7 +196,7 @@ const FeedContainer = () => {
 
       <style>{`
         .one-piece-theme {
-          --ion-background-color:rgb(207, 168, 168);
+          --ion-background-color:rgb(109, 74, 74);
           --ion-text-color: white;
         }
         .content-area {
@@ -209,7 +209,7 @@ const FeedContainer = () => {
           color:rgb(2, 2, 2);
         }
         .post-card {
-          background-color:rgb(209, 79, 79);
+          background-color:rgb(241, 139, 139);
           margin-bottom: 15px;
           border-radius: 12px;
         }
@@ -217,7 +217,7 @@ const FeedContainer = () => {
           background-color:rgb(233, 229, 229);
         }
         .post-button {
-          background-color:rgb(151, 83, 37);
+          background-color:rgb(218, 201, 190);
           color: white;
         }
       `}</style>
