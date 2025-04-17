@@ -13,6 +13,7 @@ import { useState } from 'react';
 import { supabase } from '../utils/supabaseClient';
 import logo from '../assets/onepiecelogo.jpg';
 
+// Pirate-themed AlertBox
 const AlertBox: React.FC<{ message: string; isOpen: boolean; onClose: () => void }> = ({
   message,
   isOpen,
@@ -22,9 +23,17 @@ const AlertBox: React.FC<{ message: string; isOpen: boolean; onClose: () => void
     <IonAlert
       isOpen={isOpen}
       onDidDismiss={onClose}
-      header="Notification"
+      header="🏴‍☠️ Unauthorized Access"
+      subHeader="Straw Hat Pirates"
       message={message}
-      buttons={['OK']}
+      buttons={[
+        {
+          text: 'Aye, Captain!',
+          role: 'cancel',
+          cssClass: 'alert-button-confirm',
+        },
+      ]}
+      cssClass="pirate-alert"
     />
   );
 };
@@ -41,7 +50,7 @@ const Login: React.FC = () => {
     const { error } = await supabase.auth.signInWithPassword({ email, password });
 
     if (error) {
-      setAlertMessage(error.message);
+      setAlertMessage("You're not part of the crew! Check your email and password, matey!");
       setShowAlert(true);
       return;
     }
@@ -157,8 +166,10 @@ const Login: React.FC = () => {
           </div>
         </div>
 
+        {/* Themed Alert Box */}
         <AlertBox message={alertMessage} isOpen={showAlert} onClose={() => setShowAlert(false)} />
 
+        {/* Toast Notification */}
         <IonToast
           isOpen={showToast}
           onDidDismiss={() => setShowToast(false)}
