@@ -1,4 +1,13 @@
-import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+
+import { 
+  IonButtons,
+    IonContent, 
+    IonHeader, 
+    IonMenuButton, 
+    IonPage, 
+    IonTitle, 
+    IonToolbar 
+} from '@ionic/react';
 import FeedContainer from '../../components/FeedContainer';
 
 const Feed: React.FC = () => {
@@ -7,13 +16,23 @@ const Feed: React.FC = () => {
       <IonHeader>
         <IonToolbar>
           <IonButtons slot='start'>
-            <IonMenuButton />
+            <IonMenuButton></IonMenuButton>
           </IonButtons>
           <IonTitle>Feed</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        <FeedContainer /> {/* FeedContainer now handles the "Create Post" */}
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            height: '100%',
+          }}
+        >
+          Feed
+        </div>
+        <FeedContainer />
       </IonContent>
     </IonPage>
   );
