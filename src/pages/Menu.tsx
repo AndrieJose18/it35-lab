@@ -23,7 +23,7 @@ import {
   import Home from './Home';  // Ensure you import the Home component
   import About from './About';  // Import About component
   import Details from './Details';  // Import Details component
-  import EditProfilePage from './EditProfilePage';  // Import EditProfilePage component
+  import EditProfile from './EditProfile';  // Import EditProfile component
   
   const Menu: React.FC = () => {
     const navigation = useIonRouter();
@@ -83,7 +83,7 @@ import {
             <Route exact path="/it35-lab/app/home" component={Home} />
             <Route exact path="/it35-lab/app/home/details" component={Details} />
             <Route exact path="/it35-lab/app/about" component={About} />
-            <Route exact path="/it35-lab/app/profile" component={EditProfilePage} />
+            <Route exact path="/it35-lab/app/profile" component={EditProfile} />
   
             <Route exact path="/it35-lab/app">
               <Redirect to="/it35-lab/app/home" />
