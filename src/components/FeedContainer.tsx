@@ -243,112 +243,152 @@ const FeedContainer = () => {
   return (
     <>
       <IonPage className="one-piece-theme">
-        <IonHeader>
-          <IonToolbar>
-            <IonTitle>Feed</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-        <IonContent className="content-area">
-          {user ? (
-            <>
-              <IonCard className="create-post-card">
-                <IonCardHeader>
-                  <IonCardTitle>Create Wanted Poster</IonCardTitle>
-                </IonCardHeader>
-                <IonCardContent>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                    <IonAvatar>
-                      <img src={userAvatarUrl || 'https://ionicframework.com/docs/img/demos/avatar.svg'} alt="User Avatar" />
-                    </IonAvatar>
-                    <IonInput
-                      value={postContent}
-                      onIonChange={e => setPostContent(e.detail.value || '')}
-                      placeholder="What's on your mind?"
-                      className="create-post-input"
-                    />
-                  </div>
-                  <div className="post-action-buttons">
-                    <IonButton fill="clear" color="dark"><IonIcon icon={camera} slot="start" />Photo</IonButton>
-                    <IonButton fill="clear" color="dark"><IonIcon icon={videocam} slot="start" />Live</IonButton>
-                    <IonButton fill="clear" color="dark"><IonIcon icon={person} slot="start" />Tag</IonButton>
-                  </div>
-                </IonCardContent>
-                <div style={{ display: 'flex', justifyContent: 'flex-end', padding: '0.5rem' }}>
-                  <IonButton onClick={createPost} className="post-button">Post</IonButton>
-                </div>
-              </IonCard>
+  <IonHeader>
+    <IonToolbar>
+      <IonTitle>Feed</IonTitle>
+    </IonToolbar>
+  </IonHeader>
+  <IonContent className="content-area">
+    {user ? (
+      <>
+        <IonCard className="create-post-card">
+          <IonCardHeader>
+            <IonCardTitle>Create Wanted Poster</IonCardTitle>
+          </IonCardHeader>
+          <IonCardContent>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+              <IonAvatar>
+                <img src={userAvatarUrl || 'https://ionicframework.com/docs/img/demos/avatar.svg'} alt="User Avatar" />
+              </IonAvatar>
+              <IonInput
+                value={postContent}
+                onIonChange={e => setPostContent(e.detail.value || '')}
+                placeholder="What's on your mind, Captain?"
+                className="create-post-input"
+              />
+            </div>
+            <div className="post-action-buttons">
+              <IonButton fill="clear" color="dark"><IonIcon icon={camera} slot="start" />Treasure</IonButton>
+              <IonButton fill="clear" color="dark"><IonIcon icon={videocam} slot="start" />Adventure</IonButton>
+              <IonButton fill="clear" color="dark"><IonIcon icon={person} slot="start" />Crew</IonButton>
+            </div>
+          </IonCardContent>
+          <div style={{ display: 'flex', justifyContent: 'flex-end', padding: '0.5rem' }}>
+            <IonButton onClick={createPost} className="post-button">Post</IonButton>
+          </div>
+        </IonCard>
 
-              {posts.map(renderPost)}
-            </>
-          ) : (
-            <IonLabel>Loading...</IonLabel>
-          )}
-        </IonContent>
+        {posts.map(renderPost)}
+      </>
+    ) : (
+      <IonLabel>Loading...</IonLabel>
+    )}
+  </IonContent>
 
-        <IonModal isOpen={isModalOpen} onDidDismiss={() => setIsModalOpen(false)}>
-          <IonHeader>
-            <IonToolbar><IonTitle>Edit Post</IonTitle></IonToolbar>
-          </IonHeader>
-          <IonContent>
-            <IonInput value={postContent} onIonChange={e => setPostContent(e.detail.value || '')} placeholder="Edit your post..." />
-          </IonContent>
-          <IonFooter>
-            <IonButton onClick={savePost}>Save</IonButton>
-            <IonButton onClick={() => setIsModalOpen(false)}>Cancel</IonButton>
-          </IonFooter>
-        </IonModal>
+  <IonModal isOpen={isModalOpen} onDidDismiss={() => setIsModalOpen(false)}>
+    <IonHeader>
+      <IonToolbar><IonTitle>Edit Post</IonTitle></IonToolbar>
+    </IonHeader>
+    <IonContent>
+      <IonInput value={postContent} onIonChange={e => setPostContent(e.detail.value || '')} placeholder="Edit your post..." />
+    </IonContent>
+    <IonFooter>
+      <IonButton onClick={savePost}>Save</IonButton>
+      <IonButton onClick={() => setIsModalOpen(false)}>Cancel</IonButton>
+    </IonFooter>
+  </IonModal>
 
-        <IonAlert isOpen={isAlertOpen} onDidDismiss={() => setIsAlertOpen(false)} header="Success" message="Post updated successfully!" buttons={['OK']} />
-      </IonPage>
+  <IonAlert isOpen={isAlertOpen} onDidDismiss={() => setIsAlertOpen(false)} header="Success" message="Post updated successfully!" buttons={['OK']} />
+</IonPage>
 
-      <style>{`
-        .one-piece-theme {
-          --ion-background-color:rgb(221, 111, 92);
-          --ion-text-color: white;
-        }
+<style>{`
+  .one-piece-theme {
+  --ion-background-color: #f4e1c1; /* Light parchment/scroll color */
+  --ion-text-color: #2d1f1d; /* Dark brown for contrast */
+  font-family: 'Pirate', sans-serif; /* Example pirate font */
+}
 
-        .create-post-card {
-          background-color:rgb(221, 228, 198);
-          border-radius: 10px;
-          color:rgb(26, 11, 11);
-        }
+.create-post-card {
+  background-color: #ffd700; /* Gold to match treasure theme */
+  border-radius: 12px;
+  color: #2d1f1d;
+  border: 3px solid #4e2a06; /* Dark wood border for a rustic look */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  padding: 20px;
+}
 
-        .post-card {
-          background-color:rgb(185, 180, 110);
-          margin-bottom: 15px;
-          border-radius: 12px;
-        }
+.post-card {
+  background-color: #deb887; /* Light brown similar to parchment */
+  margin-bottom: 15px;
+  border-radius: 12px;
+  padding: 16px;
+  color: #2d1f1d;
+  border: 2px solid #8b4513; /* Darker wood border */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for a rugged look */
+}
 
-        .post-button {
-          background-color:rgb(211, 163, 131);
-          color: white;
-        }
+.post-card ion-card-header {
+  background-color: #4e2a06; /* Dark wood background for header */
+  border-radius: 10px;
+}
 
-        .comment-text {
-          display: block;
-          padding-left: 16px;
-          margin-top: 8px;
-          color: white;
-        }
+.post-card ion-card-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffd700; /* Gold text for pirate feel */
+}
 
-        .create-post-input {
-          background-color: white;
-          border-radius: 999px;
-          padding: 10px 16px;
-          font-size: 15px;
-          border: 1px solid #ccc;
-          color: black;
-          flex: 1;
-        }
+.post-button {
+  background-color: #8b4513; /* Deep brown like old treasure chests */
+  color: white;
+  font-weight: bold;
+}
 
-        .post-action-buttons {
-          display: flex;
-          justify-content: space-around;
-          margin-top: 10px;
-          border-top: 1px solid #ccc;
-          padding-top: 10px;
-        }
-      `}</style>
+.create-post-input {
+  background-color: #fff;
+  border-radius: 999px;
+  padding: 10px 16px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  color: #2d1f1d;
+  flex: 1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.comment-text {
+  display: block;
+  padding-left: 16px;
+  margin-top: 8px;
+  color: #2d1f1d;
+}
+
+.post-action-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+}
+
+.post-action-buttons ion-button {
+  font-weight: bold;
+  color: #4e2a06;
+}
+
+.post-action-buttons ion-button:hover {
+  background-color: #f8d7a1; /* Light gold for hover */
+}
+
+/* Add parchment background to posts */
+.post-card ion-card-content {
+  background-color: #fdf1c1; /* Light parchment color for content */
+  border-radius: 8px;
+  padding: 12px;
+}
+
+`}</style>
+
     </>
   );
 };
