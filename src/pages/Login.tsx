@@ -6,7 +6,7 @@ import {
   IonInput,
   IonInputPasswordToggle,
   IonPage,
-  IonToast,
+  IonModal,
   useIonRouter,
 } from '@ionic/react';
 import { useState } from 'react';
@@ -44,7 +44,7 @@ const Login: React.FC = () => {
   const [password, setPassword] = useState('');
   const [alertMessage, setAlertMessage] = useState('');
   const [showAlert, setShowAlert] = useState(false);
-  const [showToast, setShowToast] = useState(false);
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
 
   const doLogin = async () => {
     const { error } = await supabase.auth.signInWithPassword({ email, password });
@@ -55,10 +55,7 @@ const Login: React.FC = () => {
       return;
     }
 
-    setShowToast(true);
-    setTimeout(() => {
-      navigation.push('/it35-lab/app', 'forward', 'replace');
-    }, 300);
+    setShowSuccessModal(true);
   };
 
   return (
@@ -109,7 +106,7 @@ const Login: React.FC = () => {
               padding: '25px',
               borderRadius: '18px',
               width: '100%',
-              maxWidth: '400px',
+              maxWidth: '90vw',
               boxShadow: '0 6px 15px rgba(0, 0, 0, 0.4)',
               border: '2px solid #8B4513',
             }}
@@ -169,15 +166,55 @@ const Login: React.FC = () => {
         {/* Themed Alert Box */}
         <AlertBox message={alertMessage} isOpen={showAlert} onClose={() => setShowAlert(false)} />
 
-        {/* Toast Notification */}
-        <IonToast
-          isOpen={showToast}
-          onDidDismiss={() => setShowToast(false)}
-          message="Login successful! Setting sail..."
-          duration={1500}
-          position="top"
-          color="tertiary"
-        />
+        {/* Pirate-themed Success Modal */}
+       {/* Pirate-themed Success Modal */}
+       <IonModal isOpen={showSuccessModal} onDidDismiss={() => setShowSuccessModal(false)} className="centered-modal" backdropDismiss={false} showBackdrop={true}>
+  <div className="modal-content-box">
+    <h2
+      style={{
+        fontFamily: '"Treasure Map Deadhand", serif',
+        fontSize: '1.8rem',
+        color: '#8B0000',
+        marginBottom: '10px',
+      }}
+    >
+      ☠️ Welcome aboard, Captain!
+    </h2>
+    <p style={{ fontSize: '1rem', color: '#000' }}>
+      Ye be part of the Straw Hat crew now!
+    </p>
+    <IonButton
+      color="warning"
+      shape="round"
+      expand="block"
+      style={{ marginTop: '20px', fontWeight: 'bold' }}
+      onClick={() => {
+        setShowSuccessModal(false);
+        navigation.push('/it35-lab/app', 'forward', 'replace');
+      }}
+    >
+      Set Sail!
+    </IonButton>
+  </div>
+</IonModal>
+
+
+
+
+        <style>{`
+          .pirate-alert {
+            --background: #fff8dc;
+            --color: #000;
+            --ion-color-primary: #8B4513;
+          }
+          .centered-modal {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+          }
+        `}</style>
       </IonContent>
     </IonPage>
   );
